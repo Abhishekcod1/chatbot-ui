@@ -1393,6 +1393,67 @@ export type Database = {
           },
         ]
       }
+      doubts: {
+        Row: {
+          id: string
+          user_id: string
+          workspace_id: string | null
+          question: string
+          answer: string | null
+          solved: boolean
+          mentor_id: string | null
+          solved_at: string | null
+          created_at: string
+          updated_at: string | null
+        }
+        Insert: {
+          id?: string
+          user_id: string
+          workspace_id?: string | null
+          question: string
+          answer?: string | null
+          solved?: boolean
+          mentor_id?: string | null
+          solved_at?: string | null
+          created_at?: string
+          updated_at?: string | null
+        }
+        Update: {
+          id?: string
+          user_id?: string
+          workspace_id?: string | null
+          question?: string
+          answer?: string | null
+          solved?: boolean
+          mentor_id?: string | null
+          solved_at?: string | null
+          created_at?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "doubts_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "doubts_workspace_id_fkey"
+            columns: ["workspace_id"]
+            isOneToOne: false
+            referencedRelation: "workspaces"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "doubts_mentor_id_fkey"
+            columns: ["mentor_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       workspaces: {
         Row: {
           created_at: string
