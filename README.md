@@ -176,6 +176,16 @@ Your local instance of Chatbot UI should now be running at [http://localhost:300
 
 You can view your backend GUI at [http://localhost:54323/project/default/editor](http://localhost:54323/project/default/editor).
 
+### 7. Rate graphics (optional)
+
+If you want to quickly rate a folder of images with GPT-4 Vision, run:
+
+```bash
+npm run rate-images -- <path/to/directory>
+```
+
+Each image file will be sent to OpenAI and a score from **1** to **10** will be printed to the console. Make sure the `OPENAI_API_KEY` environment variable is set before running the command.
+
 ## Hosted Quickstart
 
 Follow these steps to get your own Chatbot UI instance running in the cloud.
